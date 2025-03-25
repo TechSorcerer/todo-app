@@ -1,0 +1,29 @@
+.todo-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+}
+
+.todo-filter-buttons button {
+  background: none;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #666;
+}
+
+.todo-filter-buttons button.active {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.todo-clear-btn {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+}
