@@ -4,9 +4,9 @@ import "./TodoFilter.css";
 function TodoFilter({ filter, onFilterChange, onClearCompleted, todoCount }) {
   return (
     <div className="todo-filter">
-      <span>{todoCount} items left</span>
+      <span className="todo-count">{todoCount} items left</span>
       <div className="todo-filter-buttons">
-        {["all", "active", "completed"].map((filterType) => (
+        {["All", "Active", "Completed"].map((filterType) => (
           <button
             key={filterType}
             onClick={() => onFilterChange(filterType)}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./TodoList.css";
 import TodoItem from "../TodoItem/TodoItem";
+import { Circle } from "lucide-react";
 
 function TodoList({ todos, onDelete, onToggle, onAdd }) {
   const [newTodo, setNewTodo] = useState("");
@@ -16,6 +17,7 @@ function TodoList({ todos, onDelete, onToggle, onAdd }) {
   return (
     <div>
       <form onSubmit={handleSubmit} className="todo-input-container">
+        <Circle size={20} className="circle-icon" />
         <input
           type="text"
           value={newTodo}
@@ -23,9 +25,6 @@ function TodoList({ todos, onDelete, onToggle, onAdd }) {
           placeholder="Create a new todo..."
           className="todo-input"
         />
-        <button type="submit" className="todo-add-btn">
-          +
-        </button>
       </form>
 
       {todos.map((todo) => (

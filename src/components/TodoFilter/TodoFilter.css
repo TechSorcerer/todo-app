@@ -8,12 +8,19 @@
   border-radius: 4px;
 }
 
+.todo-count {
+  color: #4b5563;
+  font-size: 14px;
+  padding: 1px 6px;
+}
+
 .todo-filter-buttons button {
+  font-family: "Comic Sans MS";
   background: none;
   border: none;
   margin: 0 5px;
   cursor: pointer;
-  color: #666;
+  color: #4b5563;
 }
 
 .todo-filter-buttons button.active {
@@ -22,6 +29,7 @@
 }
 
 .todo-clear-btn {
+  font-family: "Comic Sans MS";
   background: none;
   border: none;
   color: #f44336;

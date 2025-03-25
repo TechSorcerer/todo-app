@@ -1,14 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
+  font-family: "Comic Sans MS", cursive;
+  background-color: #fff;
 }
 
-#root {
+/* #root {
   width: 100%;
   max-width: 500px;
-}
+} */

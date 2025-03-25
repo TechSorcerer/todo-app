@@ -1,24 +1,26 @@
 .todo-input-container {
+  position: relative;
   display: flex;
   margin-bottom: 20px;
 }
 
+.circle-icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: grey;
+  stroke-width: 1.5;
+}
+
 .todo-input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px 0 0 4px;
-}
-
-.todo-add-btn {
-  padding: 10px 15px;
-  background-color: #4caf50;
-  color: white;
+  font-family: "Comic Sans MS";
+  width: 100%;
+  padding: 1rem;
+  padding-left: 3rem;
+  font-size: 1rem;
   border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
-
-.todo-add-btn:hover {
-  background-color: #45a049;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }

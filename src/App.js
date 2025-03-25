@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList/TodoList";
 import TodoFilter from "./components/TodoFilter/TodoFilter";
+import { Moon } from "lucide-react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [filter, setFilter] = useState("all");
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+  const [filter, setFilter] = useState("All");
 
   // Add new Todo
   const addTodo = (text) => {
@@ -39,8 +43,8 @@ function App() {
 
   // Filter Todo
   const filteredTodos = todos.filter((todo) => {
-    if (filter === "active") return !todo.completed;
-    if (filter === "completed") return todo.completed;
+    if (filter === "Active") return !todo.completed;
+    if (filter === "Completed") return todo.completed;
     return true;
   });
 
@@ -58,21 +62,29 @@ function App() {
   }, []);
 
   return (
-    <div className="todo-app">
-      <h1>Todo List</h1>
-      <TodoList
-        todos={filteredTodos}
-        onDelete={deleteTodo}
-        onToggle={toggleTodo}
-        onAdd={addTodo}
-      />
-      <TodoFilter
-        filter={filter}
-        onFilterChange={setFilter}
-        onClearCompleted={clearCompleted}
-        todoCount={todos.filter((todo) => !todo.completed).length}
-      />
-    </div>
+    <>
+      <div className="todo-image"></div>
+      <div className="todo-app">
+        <header>
+          <h1>TODO</h1>
+          <button className="theme-toggle">
+            <Moon size={24} />
+          </button>
+        </header>
+        <TodoList
+          todos={filteredTodos}
+          onDelete={deleteTodo}
+          onToggle={toggleTodo}
+          onAdd={addTodo}
+        />
+        <TodoFilter
+          filter={filter}
+          onFilterChange={setFilter}
+          onClearCompleted={clearCompleted}
+          todoCount={todos.filter((todo) => !todo.completed).length}
+        />
+      </div>
+    </>
   );
 }
 
